@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pide ser tu novio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+  <style>
+    body {
+      font-family: 'Pacifico', sans-serif;  /* Fuente personalizada */
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #A3D8FF, #81C784);  /* Fondo con gradiente */
+      color: white;
+      transition: background-color 1s ease-in-out; /* Transición suave al cambiar de fondo */
+    }
+
+    h1 {
+      font-size: 4em;  /* Aumentar tamaño del título */
+      color: #ffcc00;  /* Amarillo para el título */
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* Sombra para que resalte más */
+      margin-bottom: 20px;
+      border: 5px dashed #fff;  /* Borde decorativo */
+      padding: 20px;
+      border-radius: 15px; /* Bordes redondeados */
+      background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    }
+
+    #mensaje {
+      font-size: 3em;  /* Aumentar tamaño del mensaje */
+      margin-top: 20px;
+      color: #333;  /* Color inicial de las letras */
+      transition: color 0.5s ease, transform 0.5s ease;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra en el mensaje */
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      margin: 15px;
+      cursor: pointer;
+      border: 3px solid #fff;  /* Borde blanco en los botones */
+      border-radius: 30px;  /* Bordes redondeados */
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+      color: white;  /* Color del texto de los botones */
+      background-color: #4CAF50; /* Inicial verde para "Sí" */
+    }
+
+    #no {
+      background-color: #f44336;  /* Rojo para el botón 'No' */
+    }
+
+    /* Cambios al pasar el mouse */
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra de caja en hover */
+    }
+
+    /* Estilo cuando un botón es presionado */
+    button:active {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+
+    /* Estilo cuando se presiona "Sí" */
+    button.pressed-si {
+      background-color: #81C784; /* Verde más suave */
+    }
+
+    /* Estilo cuando se presiona "No" */
+    button.pressed-no {
+      background-color: #FF7961; /* Rojo más suave */
+    }
+
+    /* Estilo de los mensajes cuando se presionan */
+    #mensaje.sí {
+      color: #004d40;  /* Verde oscuro que resalta */
+      transform: scale(1.1);  /* Aumenta de tamaño ligeramente */
+    }
+
+    #mensaje.no {
+      color: #8B0000;  /* Rojo oscuro que resalta */
+      transform: scale(1.1);  /* Aumenta de tamaño ligeramente */
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Me dejas ser tu novio?</h1>
+  <p id="mensaje">Presiona uno de los botones</p>
+  <button id="si">Sí</button>
+  <button id="no">No</button>
+
+  <script>
+    // Cuando se presiona "Sí"
+    document.getElementById("si").addEventListener("click", function() {
+      document.body.style.backgroundColor = "#A7F3D0";  // Fondo verde suave
+      document.getElementById("mensaje").innerText = "Te amo demasiado, mi princesa linda";
+      document.getElementById("mensaje").classList.add("sí");
+      document.getElementById("mensaje").classList.remove("no");
+
+      // Cambiar el estado del botón "Sí"
+      document.getElementById("si").classList.add("pressed-si");
+      document.getElementById("no").classList.remove("pressed-no");
+    });
+
+    // Cuando se presiona "No"
+    document.getElementById("no").addEventListener("click", function() {
+      document.body.style.backgroundColor = "#FFB3B3";  // Fondo rojo suave
+      document.getElementById("mensaje").innerText = "Tilín es demasiado cabezón";
+      document.getElementById("mensaje").classList.add("no");
+      document.getElementById("mensaje").classList.remove("sí");
+
+      // Cambiar el estado del botón "No"
+      document.getElementById("no").classList.add("pressed-no");
+      document.getElementById("si").classList.remove("pressed-si");
+    });
+  </script>
+</body>
+</html>
